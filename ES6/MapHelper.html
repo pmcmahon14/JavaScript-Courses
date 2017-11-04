@@ -15,16 +15,31 @@
         doubledNumbers.push(numbers[i]*2);
     }
 
-    //new way uses map method to iterate, or map, results into new array
+    //new way uses map method to modify records (iterate here), or map, results into new array
+    //if return statement is not used, result will be null
 
-    var doubled = numbers.map(function() {
+    var doubled = numbers.map(function(number) {
         return number * 2;
     });
 
-    //doubled
+    //doubled;
     //doubledNumbers;
     console.log(doubled);
     console.log(doubledNumbers);
+
+    //use with key/value pairs
+
+    var cars = [
+        {model: "Buick", price: "cheap"},
+        {model: "Camaro", price:"expensive"}
+    ];
+
+    var prices = cars.map(function(car) {
+        return car.price;
+    });
+
+    //prices;
+    console.log(prices);
 </script>
 </body>
 </html>
