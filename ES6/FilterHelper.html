@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Filter Helper</title>
 </head>
 <body>
+<script>
+    var products = [
+        {name: "cucumber", type: "vegetable"},
+        {name: "banana", type: "fruit"},
+        {name: "celery", type: "vegetable"},
+        {name: "orange", type: "fruit"}
+    ];
+
+    //old way with for loop
+
+    var filteredProducts = [];
+
+    for (var i=0; i<products.length; i++) {
+        if (products[i].type === 'fruit') {
+            filteredProducts.push(products[i]);
+        }
+    }
+
+    //filteredProducts;
+    console.log(filteredProducts);
+
+    //new way with filter method
+
+    products.filter(function(product) {
+        return product.type === 'fruit';
+    });
+</script>
 
 </body>
 </html>
