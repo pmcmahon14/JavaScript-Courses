@@ -9,11 +9,22 @@
     var numbers = [1,2,3];
     var doubledNumbers = [];
 
+    //old way uses for loop to push into new array
+
     for (var i=0; i<numbers.length; i++) {
         doubledNumbers.push(numbers[i]*2);
     }
 
-    doubledNumbers;
+    //new way uses map method to iterate, or map, results into new array
+
+    var doubled = numbers.map(function() {
+        return number * 2;
+    });
+
+    //doubled
+    //doubledNumbers;
+    console.log(doubled);
+    console.log(doubledNumbers);
 </script>
 </body>
 </html>
