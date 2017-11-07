@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Every Helper</title>
+    <title>Every and Some Helpers</title>
 </head>
 <body>
 <script>
@@ -27,16 +27,21 @@
         }
     }
 
-    "---"
+    "---";
     //allComputersCanRunProgram;
     console.log(allComputersCanRunProgram);
     //onlySomeComputersCanRunProgram;
     console.log(onlySomeComputersCanRunProgram);
-    "+++"
+    "+++";
 
     computers.every(function(computer) {
         return computer.ram > 16;
-    })
+    });
+
+    computers.some(function(computer) {
+        return computer.ram > 16;
+    });
+
 </script>
 </body>
 </html>
