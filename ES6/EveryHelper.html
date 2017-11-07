@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Every Helper</title>
+</head>
+<body>
+<script>
+    var computers = [
+        {name: 'Apple', ram: 16},
+        {name: 'Compaq', ram: 4},
+        {name: 'Acer', ram: 32}
+    ];
+
+    var allComputersCanRunProgram = true;
+    var onlySomeComputersCanRunProgram = false;
+
+    //old way with for loop
+
+    for (var i=0; i<computers.length; i++) {
+        var computer = computers[i];
+
+        if (computer.ram < 16) {
+            allComputersCanRunProgram = false;
+        } else {
+            onlySomeComputersCanRunProgram = true;
+        }
+    }
+
+    "---"
+    //allComputersCanRunProgram;
+    console.log(allComputersCanRunProgram);
+    //onlySomeComputersCanRunProgram;
+    console.log(onlySomeComputersCanRunProgram);
+    "+++"
+
+    computers.every(function(computer) {
+        return computer.ram > 16;
+    })
+</script>
+</body>
+</html>
