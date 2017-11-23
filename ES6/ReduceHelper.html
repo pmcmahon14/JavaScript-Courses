@@ -5,6 +5,21 @@
     <title>Reduce Helper</title>
 </head>
 <body>
+<script>
+    var numbers = [10, 20, 30];
+    var sum = 0;
 
+    for (var i=0; i<numbers.length; i++) {
+        sum += numbers[i]
+    }
+
+    "---"
+
+    //with reduce method, initial value must be passed through after function (in this case, 0)
+
+    numbers.reduce(function(sum, number) {
+        return sum+number;
+    }, 0);
+</script>
 </body>
 </html>
