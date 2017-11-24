@@ -34,8 +34,34 @@
         return previous
     }, []);
 
+    //possible whiteboard interview question with balancing parentheses
+    //uses number to determine balance
 
+    function balancedParens(string) {
+        return string.split("").reduce(function(previous, char) {
+            if (char === "(") {return ++previous; }
+            if (char === ")") {return --previous; }
+            return previous;
 
+        }, 0);
+    }
+
+    balancedParens('((((');
+
+    //uses ! (not) to determine balance
+
+    function balancedParens2(string) {
+        return !string.split("").reduce(function(previous, char) {
+            //add condition so that closing paren cannot proceed opening paren
+            if (previous < 0) {return previous;}
+            if (char === "(") {return ++previous; }
+            if (char === ")") {return --previous; }
+            return previous;
+
+        }, 0);
+    }
+
+    balancedParens2('()()))');
 </script>
 </body>
 </html>
