@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Template Strings</title>
 </head>
 <body>
+<script>
+    //ES5
 
+    function getMessage() {
+        const year = new Date().getFullYear();
+        return "The year is " + year;
+    }
+
+    getMessage();
+
+    //ES6
+    //note back ticks, curly braces, and $
+
+    function getMessage() {
+        const year = new Date().getFullYear();
+        return `The year is ${year}`;
+    }
+
+    getMessage();
+
+    function getMessage() {
+        const year = new Date().getFullYear();
+        return `The year is ${new Date()}`;
+    }
+
+    getMessage();
+
+
+</script>
 </body>
 </html>
