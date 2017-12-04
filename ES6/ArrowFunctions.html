@@ -5,6 +5,58 @@
     <title>Arrow Functions</title>
 </head>
 <body>
+<script>
 
+//old way with 'function' to left of argument list
+
+const add = function (a, b) {
+    return a + b;
+};
+
+add (1, 2);
+
+//new way with fat arrow which goes to right of argument list
+
+const add = (a, b) => {
+    return a + b;
+};
+
+add (1, 2);
+
+//can also get rid of curly braces and use implicit return, placed to right of fat arrow, but consider readability
+
+const add = (a, b) => a + b;
+
+add (1, 2);
+
+//advanced use of fat arrow, may omit parentheses with only one argument
+
+const double = (number) => 2 * number;
+double(8);  //result 16
+
+const double2 = (number1, number2) => {
+    return 2 * number1 + 2 * number2;
+};
+double2(8);  //result 24
+
+//with no arguments
+
+const double3 = () => {
+    return 2;
+};
+double3();  //result 2
+
+//use with arrays
+
+const numbers = [1, 2, 3];
+
+numbers.map(function(number) {
+    return 2 * number;
+});  //result [2, 4, 6]
+
+const numbers = [1, 2, 3];
+
+numbers.map(number => 2 * number);  //result {2, 4, 6]
+</script>
 </body>
 </html>
