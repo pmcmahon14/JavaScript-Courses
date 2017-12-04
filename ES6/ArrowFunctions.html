@@ -57,6 +57,48 @@ numbers.map(function(number) {
 const numbers = [1, 2, 3];
 
 numbers.map(number => 2 * number);  //result {2, 4, 6]
+
+//arrow with objects
+
+const team = {
+    members: ['Jane', 'Bill'],
+    teamName: 'Super Squad',
+    teamSummary: function() {
+        return this.members.map(function(member) {
+            return `${member} is on team ${this.teamName}`;
+        });
+    }
+};
+
+team.teamSummary();  //this is undefined due to anonymous function
+
+//first possible solution is to use bind method, binds this to current context, or set variable to this
+
+const team = {
+    members: ['Jane', 'Bill'],
+    teamName: 'Super Squad',
+    teamSummary: function() {
+        return this.members.map(function(member) {
+            return `${member} is on team ${this.teamName}`;
+        }.bind(this));
+    }
+};
+
+team.teamSummary();  //result ["Jane is on team Super Squad","Bill is on team Super Squad"]
+
+//second possible solution with arrows and lexical this, drops anonymous function and replace with arrow
+
+const team = {
+    members: ['Jane', 'Bill'],
+    teamName: 'Super Squad',
+    teamSummary: function() {
+        return this.members.map((member) => {
+            return `${member} is on team ${this.teamName}`;
+    });
+    }
+};
+
+team.teamSummary();  //result ["Jane is on team Super Squad","Bill is on team Super Squad"]
 </script>
 </body>
 </html>
