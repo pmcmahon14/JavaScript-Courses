@@ -12,8 +12,8 @@
             inventoryValue: function() {
                 return this.inventory.reduce((total, book) => total + book.price, 0);
             },
-            priceForTitle: function() {
-
+            priceForTitle: function(title) {
+                return this.inventory.find(book => book.title === title).price;
             }
         };
     }
@@ -24,6 +24,9 @@
     ];
 
     const bookShop = createBookShop(inventory);
+
+    bookShop.inventoryValue();
+    bookShop.priceForTitle('Harry Potter');
 </script>
 </body>
 </html>
