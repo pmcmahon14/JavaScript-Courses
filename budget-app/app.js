@@ -1,21 +1,13 @@
+//BUDGET CONTROLLER
 var budgetController = (function(){
 
-    var x = 23;
-
-    var add = function(a) {
-        return x + a;
-    }
-
-    return {
-        publicTest: function(b) {
-            console.log(add(b));
-        }
-    }
+    //some code
 
 
 })();
 
 
+//UI CONTROLLER
 var UIController = (function() {
 
    //some code
@@ -23,8 +15,9 @@ var UIController = (function() {
 })();
 
 
-var controller = (function() {
+//GLOBAL APP CONTROLLER
+var controller = (function(budgetCtrl, UICtrl) {
 
+    //some code
 
-
-})();
+});
