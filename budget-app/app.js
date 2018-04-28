@@ -38,25 +38,36 @@ var UIController = (function() {
 //GLOBAL APP CONTROLLER
 var controller = (function(budgetCtrl, UICtrl) {
 
-    var DOM = UICtrl.getDOMstrings();
+    var setupEventListeners = function() {
+        var DOM = UICtrl.getDOMstrings();
+        document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
+
+        document.addEventListener('keypress', function(event) {
+
+            if (event.keyCode === 13 || event.which === 13) {
+                ctrlAddItem();
+            }
+        });
+    };
+
 
     var ctrlAddItem = function() {
         //TODO GET INPUT FIELD DATA
         var input = UICtrl.getinput();
-        console.log(input)
         //TODO ADD ITEM TO BUDGET CONTROLLER
         //TODO ADD NEW ITEM TO UI
         //TODO CALCULATE BUDGET
         //TODO DISPLAY BUDGET ON UI
-    }
+    };
 
-    document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
-
-    document.addEventListener('keypress', function(event) {
-
-        if (event.keyCode === 13 || event.which === 13) {
-            ctrlAddItem();
+    return {
+        init: function() {
+            console.log('started');
+            setupEventListeners();
         }
-    });
+    };
+
 
 })(budgetController, UIController);
+
+controller.init();
