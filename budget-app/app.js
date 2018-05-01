@@ -78,7 +78,7 @@ var UIController = (function() {
            return {
                type: document.querySelector(DOMstrings.inputType).value,  // WILL BE EITHER INCOME OR EXPENSE
                description: document.querySelector(DOMstrings.inputDescription).value,
-               value: document.querySelector(DOMstrings.inputValue).value
+               value: parseFloat(document.querySelector(DOMstrings.inputValue).value)
            };
 
        },
@@ -146,23 +146,37 @@ var controller = (function(budgetCtrl, UICtrl) {
         });
     };
 
+    var updateBudget = function() {
+
+        //TODO CALCULATE BUDGET
+
+        //TODO RETURN BUDGET
+
+        //TODO DISPLAY BUDGET ON UI
+
+    };
 
     var ctrlAddItem = function() {
         var input, newItem;
 
         //TODO GET INPUT FIELD DATA
         input = UICtrl.getInput();
-        //TODO ADD ITEM TO BUDGET CONTROLLER
-        newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
-        //TODO ADD NEW ITEM TO UI
-        UICtrl.addListItem(newItem, input.type);
+        if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
 
-        //TODO CLEAR FIELDS
-        UICtrl.clearFields();
+            //TODO ADD ITEM TO BUDGET CONTROLLER
+            newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
-        //TODO CALCULATE BUDGET
-        //TODO DISPLAY BUDGET ON UI
+            //TODO ADD NEW ITEM TO UI
+            UICtrl.addListItem(newItem, input.type);
+
+            //TODO CLEAR FIELDS
+            UICtrl.clearFields();
+
+            //TODO CALCULATE AND UPDATE BUDGET
+            updateBudget();
+
+        }
     };
 
     return {
