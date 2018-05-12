@@ -233,6 +233,7 @@ var controller = (function(budgetCtrl, UICtrl) {
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
 
     };
+    
 
     var updateBudget = function() {
 
@@ -246,6 +247,16 @@ var controller = (function(budgetCtrl, UICtrl) {
         UICtrl.displayBudget(budget);
 
     };
+
+    var updatePercentages = function() {
+
+        //calculate percentages
+
+        //read percentages from budget controller
+
+        //update UI with new percentages
+
+    };                                             //
 
     var ctrlAddItem = function() {
         var input, newItem;
@@ -266,6 +277,9 @@ var controller = (function(budgetCtrl, UICtrl) {
 
             //TODO CALCULATE AND UPDATE BUDGET
             updateBudget();
+
+            //calculate and update percentages
+            updatePercentages();
 
         }
     };
@@ -290,6 +304,9 @@ var controller = (function(budgetCtrl, UICtrl) {
 
             //Update and show new budget
             updateBudget();
+
+            //calculate and update percentages
+            updatePercentages();
 
         }
 
