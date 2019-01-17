@@ -57,6 +57,21 @@
     //commentsForPost(post, comments);
     console.log(commentsForPost(post, comments));
 
+    const houses = [
+        {name: 'Patrick', age: 45, sex: 'male'},
+        {name: 'Dawn', age: 48, sex: 'female'},
+        {name: 'Sierra', age: 14, sex: 'female'},
+        {name: 'Finn', age: 5, sex: 'male'}
+    ];
+
+    houses.filter(function(house) {
+        return house.sex === 'female';
+    });
+
+    const numbers = [10, 20, 30];
+    const reject = (array, iteratorFunction) => array.filter(num => !iteratorFunction(num));
+    reject(numbers, num => num > 15);
+
 </script>
 
 </body>

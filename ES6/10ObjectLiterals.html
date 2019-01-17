@@ -8,11 +8,11 @@
 <script>
     function createBookShop(inventory) {
         return {
-            inventory: inventory,
+            inventory: inventory,  //can be just inventory
             inventoryValue: function() {
                 return this.inventory.reduce((total, book) => total + book.price, 0);
             },
-            priceForTitle: function(title) {
+            priceForTitle: function(title) {  //can be priceForTitle(title)
                 return this.inventory.find(book => book.title === title).price;
             }
         };
@@ -27,6 +27,20 @@
 
     bookShop.inventoryValue();
     bookShop.priceForTitle('Harry Potter');
+</script>
+<script>
+    function saveFile(url,data) {
+        $.ajax({
+            url,
+            data,
+            method: 'POST'
+        });
+    }
+
+    const url = "http://fileupload.com";
+    const data = {color: 'red'};
+
+    saveFile(url, data);
 </script>
 </body>
 </html>

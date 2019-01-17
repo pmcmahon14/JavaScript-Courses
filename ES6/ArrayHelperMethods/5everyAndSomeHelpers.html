@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
-    var computers = [
+    const computers = [
         {name: 'Apple', ram: 16},
         {name: 'Compaq', ram: 4},
         {name: 'Acer', ram: 32}
     ];
 
-    var allComputersCanRunProgram = true;
-    var onlySomeComputersCanRunProgram = false;
+    let allComputersCanRunProgram = true;
+    let onlySomeComputersCanRunProgram = false;
 
     //old way with for loop
 
@@ -28,10 +28,10 @@
     }
 
     "---";
-    //allComputersCanRunProgram;
-    console.log(allComputersCanRunProgram);
-    //onlySomeComputersCanRunProgram;
-    console.log(onlySomeComputersCanRunProgram);
+    allComputersCanRunProgram;
+    //console.log(allComputersCanRunProgram);
+    onlySomeComputersCanRunProgram;
+    //console.log(onlySomeComputersCanRunProgram);
     "+++";
 
     computers.every(function(computer) {

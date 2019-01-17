@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pad Start and End</title>
+</head>
+<body>
+<script>
+    'Turtle'.padStart(10);
+    'Turtle'.padEnd(10);
+</script>
+<script>
+    const fun = (a,b,c,d,) => {
+        console.log(a);
+    }
+    fun(1,2,3,4,)
+</script>
+<script>
+    /*Object.values
+    Object.entries
+    Object.keys*/
+
+    let obj = {
+        username0: 'Santa',
+        username1: 'Rudolph',
+        username2: 'Mr. Grinch'
+    };
+
+    Object.keys(obj).forEach((key, index) => {
+        console.log(key, obj[key]);
+    });
+
+    /*username0 Santa
+    username1 Rudolph
+    username2 Mr. Grinch*/
+
+    Object.values(obj).forEach(value => {
+        console.log(value);
+    });
+
+    /*Santa
+    Rudolph
+    Mr. Grinch*/
+
+
+    /*(2) ["username0", "Santa"]
+    (2) ["username1", "Rudolph"]
+    (2) ["username2", "Mr. Grinch"]*/
+
+    Object.entries(obj).map(value => {
+        return value[1] + value[0].replace('username', '');
+    });
+
+    //(3) ["Santa0", "Rudolph1", "Mr. Grinch2"]
+
+</script>
+</body>
+</html>

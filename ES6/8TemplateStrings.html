@@ -20,6 +20,7 @@
 
     function getMessage() {
         const year = new Date().getFullYear();
+        console.log(`The year is ${year}`);
         return `The year is ${year}`;
     }
 
@@ -28,7 +29,7 @@
     function getMessage() {
         const year = new Date().getFullYear();
         return `The year is ${new Date()}`;
-    }
+    }console.log(`The year is ${getMessage()}`);
 
     getMessage();
 
@@ -39,7 +40,7 @@
     const guid = 20;
     const username = 'hello';
 
-    const data = `{"device_id":"${device_id}","guid":"${guid}","username":"${username}","}`;
+    const data = `{"device_id": "${device_id}", "guid": "${guid}", "username": "${username}", "}`;
     data
 </script>
 </body>

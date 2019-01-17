@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Classes</title>
+    <title>Properties and Methods ES7</title>
 </head>
 <body>
-<script>
 
+<!--old way-->
+
+<script>
     //new way to write constructor objects
 
     class Human {
@@ -35,8 +37,35 @@
     const person = new Person();
     person.printMyName();
     person.printGender();
+</script>
 
+<!--new way-->
 
+<script>
+    //new way to write constructor objects
+
+    class Human {
+        gender = 'male';
+
+        printGender = () => {
+            console.log(this.gender);
+        }
+    }
+
+    //if extending member class (here Person), must add 'super()' method to execute parent constructor (here Human)
+
+    class Person extends Human {
+        name = 'Patrick';
+        gender = 'female';
+
+        printMyName = () => {
+            console.log(this.name);
+        }
+    }
+
+    const person = new Person();
+    person.printMyName();
+    person.printGender();
 </script>
 </body>
 </html>

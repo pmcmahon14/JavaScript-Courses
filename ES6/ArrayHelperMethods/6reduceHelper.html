@@ -62,6 +62,10 @@
     }
 
     balancedParens2('()()))');
+
+    var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
+
+    var totalDistance = trips.map(function(obj){return obj.distance}).reduce(function(sum, distance){return sum+=distance});
 </script>
 </body>
 </html>

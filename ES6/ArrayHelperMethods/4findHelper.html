@@ -61,6 +61,15 @@
 
     postForComment(posts, comment);
 
+    const ladders = [
+        {id: 1, height: 20},
+        {id:2, height: 25}]
+
+    function findWhere(array, criteria) {
+        return array.find(function(element) {
+            return element.height === criteria.height;
+        })
+    }
 
 </script>
 </body>

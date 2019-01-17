@@ -5,6 +5,35 @@
     <title>Rest and Spread Operators</title>
 </head>
 <body>
+<script>
 
+    //spread operator
+
+    const numbers = [1,2,3];
+    const newNumbers = [...numbers, 4];
+
+    console.log(newNumbers);
+
+    const person = {
+        name: 'Patrick'
+    };
+
+    const newPerson = {
+        ...person,
+        age: 45
+    };
+
+    console.log(newPerson);
+</script>
+<script>
+
+    //rest operator
+
+    const filter = (...args) => {
+        return args.filter(el => el === 1);
+    };
+
+    console.log(filter(1,2,3));
+</script>
 </body>
 </html>

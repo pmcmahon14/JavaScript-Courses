@@ -16,6 +16,7 @@ const add = function (a, b) {
 add (1, 2);
 
 //new way with fat arrow which goes to right of argument list
+//eliminates problems with 'this' keyword
 
 const add = (a, b) => {
     return a + b;
@@ -99,6 +100,38 @@ const team = {
 };
 
 team.teamSummary();  //result ["Jane is on team Super Squad","Bill is on team Super Squad"]
+</script>
+<script>
+    //es5 problem with this keyword eliminated in es6, es5 shows workaround for problem
+    var box5 = {
+        color: 'green',
+        position: 1,
+        clickMe: function() {
+
+var self = this;
+            document.querySelector('.green').addEventListener('click', +
+                function() {
+                var str = 'This is box number ' + self.position + ' and it is ' + self.color;
+            alert(str);
+            });
+        }
+    };
+    box5.clickMe();
+
+    //es6
+    const box6 = {
+        color: 'green',
+        position: 1,
+        clickMe: function() {
+
+            document.querySelector('.green').addEventListener('click',
+                () =>  {
+                    var str = 'This is box number ' + this.position + ' and it is ' + this.color;
+                    alert(str);
+                });
+        }
+    };
+    box6.clickMe();
 </script>
 </body>
 </html>
