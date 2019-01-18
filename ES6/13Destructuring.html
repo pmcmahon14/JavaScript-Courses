@@ -5,6 +5,43 @@
     <title>Destructuring</title>
 </head>
 <body>
+<script>
+    //ES5
+    var john = ['John', 26];
+    //var name = john[0];
+    //var age = john[1];
+    //console.log('ES5 ' + name, age);
 
+    //ES6 unpacks values into distinct variables
+    const [name, age] = ['John', 26];
+    console.log('ES6 ' + name);
+    console.log('ES6 ' + age);
+
+    const obj = {
+        firstName: 'John',
+        lastName: 'Smith'
+    };
+
+    //with objects
+    const {firstName, lastName} = obj;
+    console.log(firstName);
+    console.log(lastName);
+
+    //with variables
+    const {firstName: a, lastName: b} = obj;
+    console.log(firstName);
+    console.log(lastName);
+
+
+
+    function calcAgeRetirement(year) {
+        const age = new Date().getFullYear() - year;
+        return [age, 65-age];
+    }
+
+    const [age2, retirement] = calcAgeRetirement(1990);
+    console.log(age2);
+    console.log(retirement);
+</script>
 </body>
 </html>
