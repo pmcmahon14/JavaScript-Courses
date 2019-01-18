@@ -32,6 +32,33 @@
 
     createAdminUser(new User(generateId()));
 </script>
+<script>
+    //ES5
+    /*function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
+
+        //this adds default parameters; adds these two values as constructor
+        lastName === undefined ? lastName = 'Smith' : lastName = lastName;
+        nationality === undefined ? nationality = 'American' : nationality = nationality;
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+        this.nationality = nationality;
+    }*/
+
+    //ES6
+    //now add default parameters into function parameters
+    //in both cases, type john, then emily into console and check results
+    function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'American') {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+        this.nationality = nationality;
+    }
+
+    var john = new SmithPerson('John', 1990);
+    var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
+</script>
 
 </body>
 </html>
